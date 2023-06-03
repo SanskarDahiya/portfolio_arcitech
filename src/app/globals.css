@@ -25,3 +25,26 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.white-text {
+  color: white;
+  cursor: pointer;
+}
+.white-text:hover {
+  color: white;
+  opacity: 0.7;
+  transform: scale(1.1);
+  transition: all 250ms ease-out;
+}
+
+.no-transform,
+.no-transform:hover {
+  transform: none;
+}
+
+.text-vertical {
+  transform: rotate(-90deg);
+}
+.text-vertical:hover {
+  transform: scale(1.1) rotate(-90deg);
+}
