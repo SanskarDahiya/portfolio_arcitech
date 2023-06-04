@@ -26,7 +26,7 @@ const TopNavBar = () => {
   const [isNavBarOpened, setNavBarStatus] = useState(false)
   return (
     // <div className="bg-black fixed top-0 h-[70px] w-[75%] left-[64px] flex items-center justify-between overflow-hidden">
-    <div className="bg-black h-full w-[75%] flex items-center justify-between relative">
+    <div className="bg-black h-full w-full md:w-[75%] flex items-center justify-between relative">
       <div className="white-text no-transform flex-1">NAME TAG</div>
       {/* Mobile Section Bars */}
       <div className="absolute md:hidden z-10 right-3">
