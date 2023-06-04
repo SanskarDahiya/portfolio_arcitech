@@ -1,5 +1,8 @@
 import TopNavBar from '@/components/navbar/TopNavBar'
+
+import './globals.scss'
 import './globals.css'
+
 import { Inter } from 'next/font/google'
 import SideNavBar from '@/components/navbar/SideNavBar'
 
@@ -18,9 +21,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className + ' text-white'}>
-        <TopNavBar />
-        <SideNavBar />
-        <div className="">{children}</div>
+        <div className={`flex min-h-screen`}>
+          <div className="flex-1 max-w-[64px] min-w-[64px] w-[64px] pt-[70px] bg-black">
+            <SideNavBar />
+          </div>
+          <div className="flex-1 flex flex-col">
+            <div className="flex-1 h-[70px] max-h-[70px] min-h-[70px] w-full">
+              <TopNavBar />
+            </div>
+            <div className="flex-1 m-2 text-black">{children}</div>
+          </div>
+        </div>
       </body>
     </html>
   )

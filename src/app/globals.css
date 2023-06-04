@@ -48,3 +48,20 @@ body {
 .text-vertical:hover {
   transform: scale(1.1) rotate(-90deg);
 }
+.hover-line {
+  position: relative;
+}
+
+.hover-line::before {
+  content: '';
+  position: absolute;
+  bottom: 8%;
+  width: 0%;
+  border-bottom: 1px solid white;
+  transition: width 250ms ease-in;
+}
+
+.hover-line:hover::before {
+  width: 80%;
+  border-bottom: 1px solid white;
+}
