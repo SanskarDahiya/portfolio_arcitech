@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import React from 'react'
 
 const LinkIconCss =
-  'white-text self-stretch text-center py-4 border border-white mx-1'
+  'white-text self-stretch text-center py-2 border-b border-white mx-1 flex justify-center items-center'
 
 const LinkTitleMapping = TABS.reduce((acc, item) => {
   acc[item.link] = item.title
@@ -18,18 +18,71 @@ const SideNavBar = () => {
   const [prefix, ActualPath] = currentPath.split('/')
 
   return (
-    // <div className="bg-black fixed left-0 w-16 h-full flex justify-between items-center flex-col pt-[70px] pb-[20px] gap-[80px]">
-    <div className="flex justify-between items-center flex-col gap-[80px]">
-      <span className="h-0 w-[70%] bg-gray-400 border-gray-400 border-b" />
-      <div className="white-text text-vertical flex-1 flex justify-center items-center text-xs">
-        {LinkTitleMapping[[prefix, ActualPath].join('/')] || 'Home'}
-      </div>
-      <span className="h-0 w-[70%] -mt-[4px] bg-gray-400 border-gray-400 border-b" />
-      <span className="h-0 w-[70%] -mt-[4px] bg-gray-400 border-gray-400 border-b" />
-      <div className="flex justify-center items-center flex-col w-full gap-[10px]">
-        <div className={LinkIconCss}>1</div>
-        <div className={LinkIconCss}>2</div>
-        <div className={LinkIconCss}>3</div>
+    <div className="fixed top-0 left-0 h-full w-[64px] pt-[70px] bg-black z-[1]">
+      <div className="flex justify-between items-center flex-col gap-[80px] h-[95%]">
+        <span className="h-0 w-[70%] bg-gray-400 border-gray-400 border-b" />
+        <div className="white-text text-vertical flex-1 flex justify-center items-center text-xs">
+          {LinkTitleMapping[[prefix, ActualPath].join('/')] || 'Home'}
+        </div>
+        <span className="h-0 w-[70%] -mt-[4px] bg-gray-400 border-gray-400 border-b" />
+        <span className="h-0 w-[70%] -mt-[4px] bg-gray-400 border-gray-400 border-b" />
+        <div className="flex justify-center items-center flex-col w-full gap-[10px]">
+          <div className={LinkIconCss}>
+            <svg
+              width="40px"
+              height="40px"
+              viewBox="0 0 192 192"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+            >
+              <path
+                stroke="#ffffff"
+                stroke-width="12"
+                d="M96 162c-14.152 0-24.336-.007-32.276-.777-7.849-.761-12.87-2.223-16.877-4.741a36 36 0 0 1-11.33-11.329c-2.517-4.007-3.98-9.028-4.74-16.877C30.007 120.336 30 110.152 30 96c0-14.152.007-24.336.777-32.276.76-7.849 2.223-12.87 4.74-16.877a36 36 0 0 1 11.33-11.33c4.007-2.517 9.028-3.98 16.877-4.74C71.663 30.007 81.847 30 96 30c14.152 0 24.336.007 32.276.777 7.849.76 12.87 2.223 16.877 4.74a36 36 0 0 1 11.329 11.33c2.518 4.007 3.98 9.028 4.741 16.877.77 7.94.777 18.124.777 32.276 0 14.152-.007 24.336-.777 32.276-.761 7.849-2.223 12.87-4.741 16.877a36 36 0 0 1-11.329 11.329c-4.007 2.518-9.028 3.98-16.877 4.741-7.94.77-18.124.777-32.276.777Z"
+              />
+              <circle
+                cx="96"
+                cy="96"
+                r="30"
+                stroke="#ffffff"
+                stroke-width="12"
+              />
+              <circle cx="135" cy="57" r="9" fill="#ffffff" />
+            </svg>
+          </div>
+          <div className={LinkIconCss}>
+            <svg
+              width="40px"
+              height="40px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                stroke-width="8"
+                d="M2 6C2 3.79086 3.79086 2 6 2H18C20.2091 2 22 3.79086 22 6V18C22 20.2091 20.2091 22 18 22H6C3.79086 22 2 20.2091 2 18V6ZM6 4C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H12V13H11C10.4477 13 10 12.5523 10 12C10 11.4477 10.4477 11 11 11H12V9.5C12 7.567 13.567 6 15.5 6H16.1C16.6523 6 17.1 6.44772 17.1 7C17.1 7.55228 16.6523 8 16.1 8H15.5C14.6716 8 14 8.67157 14 9.5V11H16.1C16.6523 11 17.1 11.4477 17.1 12C17.1 12.5523 16.6523 13 16.1 13H14V20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6Z"
+                fill="#ffffff"
+              />
+            </svg>
+          </div>
+          <div className={LinkIconCss}>
+            <svg
+              fill="#000000"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid"
+              width="36"
+              height="36"
+              viewBox="0 0 31.812 26"
+            >
+              <path
+                fill="#ffffff"
+                d="M20.877,2.000 C22.519,2.000 24.382,2.652 25.426,3.738 C26.724,3.486 27.949,3.025 29.050,2.386 C28.625,3.687 27.718,4.779 26.540,5.469 C27.693,5.332 28.797,5.035 29.820,4.590 C29.054,5.707 28.087,6.690 26.971,7.477 C26.981,7.715 26.987,7.955 26.987,8.195 C26.987,15.562 21.445,24.000 10.939,24.000 C7.715,24.000 4.507,23.133 1.982,21.551 C2.428,21.605 2.883,21.631 3.343,21.631 C6.019,21.631 8.482,20.740 10.439,19.242 C7.937,19.199 5.827,17.586 5.103,15.373 C5.450,15.437 5.810,15.473 6.178,15.473 C6.696,15.473 7.203,15.406 7.681,15.277 C5.068,14.768 3.100,12.514 3.100,9.813 C3.100,9.787 3.100,9.764 3.100,9.740 C3.871,10.158 4.750,10.410 5.687,10.440 C4.154,9.437 3.147,7.734 3.147,5.799 C3.147,4.777 3.428,3.818 3.919,2.998 C6.735,6.367 10.945,8.588 15.693,8.822 C15.594,8.414 15.543,7.984 15.543,7.553 C15.543,4.473 17.721,2.000 20.877,2.000 M29.820,4.590 L29.825,4.590 M20.877,-0.000 C17.033,-0.000 14.060,2.753 13.614,6.552 C10.425,5.905 7.524,4.204 5.440,1.711 C5.061,1.257 4.503,0.998 3.919,0.998 C3.867,0.998 3.815,1.000 3.763,1.004 C3.123,1.055 2.547,1.413 2.216,1.966 C1.525,3.122 1.159,4.447 1.159,5.799 C1.159,6.700 1.321,7.579 1.625,8.400 C1.300,8.762 1.113,9.238 1.113,9.740 L1.113,9.813 C1.113,11.772 1.882,13.589 3.160,14.952 C3.087,15.294 3.103,15.655 3.215,15.998 C3.657,17.348 4.459,18.510 5.499,19.396 C4.800,19.552 4.079,19.631 3.343,19.631 C2.954,19.631 2.577,19.609 2.222,19.565 C2.141,19.556 2.061,19.551 1.981,19.551 C1.148,19.551 0.391,20.078 0.108,20.886 C-0.202,21.770 0.140,22.753 0.932,23.249 C3.764,25.023 7.318,26.000 10.939,26.000 C17.778,26.000 22.025,22.843 24.383,20.195 C27.243,16.984 28.907,12.718 28.972,8.455 C29.899,7.682 30.717,6.790 31.410,5.792 C31.661,5.458 31.810,5.041 31.810,4.590 C31.810,3.909 31.473,3.308 30.958,2.946 C31.181,2.176 30.925,1.342 30.303,0.833 C29.940,0.537 29.496,0.386 29.049,0.386 C28.708,0.386 28.365,0.474 28.056,0.654 C27.391,1.040 26.680,1.344 25.931,1.562 C24.555,0.592 22.688,-0.000 20.877,-0.000 L20.877,-0.000 Z"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   )

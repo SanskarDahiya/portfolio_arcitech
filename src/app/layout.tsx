@@ -20,18 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + ' text-white'}>
-        <div className={`flex min-h-screen`}>
-          <div className="flex-1 max-w-[64px] min-w-[64px] w-[64px] pt-[70px] bg-black">
-            <SideNavBar />
-          </div>
-          <div className="flex-1 flex flex-col">
-            <div className="flex-1 h-[70px] max-h-[70px] min-h-[70px] w-full">
-              <TopNavBar />
-            </div>
-            <div className="flex-1 m-2 text-black">{children}</div>
-          </div>
-        </div>
+      <body className={inter.className + ' text-white z-[1]'}>
+        <SideNavBar />
+        <TopNavBar />
+        <div className="flex-1 text-black z-[2]">{children}</div>
       </body>
     </html>
   )
