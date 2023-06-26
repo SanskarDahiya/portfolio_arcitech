@@ -30,12 +30,12 @@ export default function Home() {
           </Fade>
         </div>
       </main>
-      <main className="w-full flex flex-col items-center justify-center my-1">
-        <div className="flex w-full min-h-[550px]">
-          <div className="flex w-full max-w-[40%] border border-black items-center justify-center">
+      <main className="my-1 pl-3">
+        <div className="min-h-[550px] flex flex-wrap">
+          <div className="md:w-[35%] w-full border border-black min-h-[50vh]">
             <div>Image Here</div>
           </div>
-          <div className="pl-12 w-full flex flex-col justify-evenly pb-12 relative">
+          <div className="flex-1 pl-0 md:pl-12 pb-12  relative">
             <Fade left>
               <div className="text-3xl">
                 WELCOME --- <span className="">--- ---</span>
@@ -52,32 +52,36 @@ export default function Home() {
               tincidunt dapibus. Ut sollicitudin elit at malesuada posuere. In
               nec maximus tellus.
             </div>
-            <div className="border-b-8 border-black max-w-[25%]"></div>
+            <div className="border-b-8 border-black max-w-[25%] min-w-[100px] my-5"></div>
             <div>
               <div>Our process</div>
-              <div className="flex items-center gap-[10px]">
-                <div className="flex items-center gap-[1px]">
-                  <span className="inline-block w-[20px] border-b border-black"></span>
-                  <span className="inline-block w-[20px] border-b border-black"></span>
-                  <span className="inline-block w-[20px] border-b border-black"></span>
-                </div>
-                <span className="">Our process</span>
-                <div className="flex items-center gap-[1px]">
-                  <span className="inline-block w-[20px] border-b border-black"></span>
-                  <span className="inline-block w-[20px] border-b border-black"></span>
-                  <span className="inline-block w-[20px] border-b border-black"></span>
-                </div>
-                <span className="">Our process</span>
+              <div className="flex items-center gap-[10px] flex-wrap">
+                <span className="flex items-center gap-[10px]">
+                  <div className="flex items-center gap-[1px]">
+                    <span className="inline-block w-[20px] border-b border-black"></span>
+                    <span className="inline-block w-[20px] border-b border-black"></span>
+                    <span className="inline-block w-[20px] border-b border-black"></span>
+                  </div>
+                  <span className="">Our process</span>
+                </span>
+                <span className="flex items-center gap-[10px]">
+                  <div className="flex items-center gap-[1px]">
+                    <span className="inline-block w-[20px] border-b border-black"></span>
+                    <span className="inline-block w-[20px] border-b border-black"></span>
+                    <span className="inline-block w-[20px] border-b border-black"></span>
+                  </div>
+                  <span className="">Our process</span>
+                </span>
               </div>
             </div>
-            <div>
+            <div className="mt-5">
               <Button>Visit Portfolio link</Button>
             </div>
           </div>
         </div>
       </main>
-      <main className="w-full flex items-center justify-around bg-black text-white min-h-[200px]">
-        <div className="flex justify-between flex-col py-[5%] gap-[20px]">
+      <main className="w-ful bg-black text-white min-h-[200px] flex flex-wrap py-[5%]">
+        <div className="flex justify-between flex-col pl-[20px] gap-[20px]">
           <Fade bottom>
             <span className="text-3xl font-200">Some Interesting</span>
           </Fade>
@@ -90,22 +94,24 @@ export default function Home() {
             <span className="text-4xl font-bold">Facts</span>
           </Fade>
         </div>
-        {[
-          { title: 'Projects', count: 10 },
-          { title: 'Customers', count: 20 },
-          { title: 'Working Time', count: 30 },
-        ].map((item, key) => {
-          return (
-            <React.Fragment key={key}>
-              <div className="relative flex flex-col">
-                <span className="font-mono text-4xl font-bold">
-                  <TextCounter count={item.count} />
-                </span>
-                <span className="ml-[20px]">{item.title}</span>
-              </div>
-            </React.Fragment>
-          )
-        })}
+        <div className="flex-1 flex items-center basis-96 justify-around mt-[20px] flex-wrap md:w-auto w-full">
+          {[
+            { title: 'Projects', count: 10 },
+            { title: 'Customers', count: 20 },
+            { title: 'Working Time', count: 30 },
+          ].map((item, key) => {
+            return (
+              <React.Fragment key={key}>
+                <div className="relative flex flex-col ">
+                  <span className="font-mono text-4xl font-bold">
+                    <TextCounter count={item.count} />
+                  </span>
+                  <span className="ml-[20px]">{item.title}</span>
+                </div>
+              </React.Fragment>
+            )
+          })}
+        </div>
       </main>
       <main className="w-full min-h-[500px] mt-[50px] px-[20px]">
         <div className="w-full mb-[20px]">
@@ -128,7 +134,7 @@ export default function Home() {
             return (
               <React.Fragment key={key}>
                 <div
-                  className="relative w-full md:w-[75%] my-14 flex flex-col gap-[10px] max-w-[75%]"
+                  className="relative w-full md:w-[75%] my-14 flex flex-col gap-[10px]"
                   style={{
                     marginLeft: key % 2 === 0 ? 'initial' : 'auto',
                   }}
