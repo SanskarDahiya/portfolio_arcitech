@@ -1,16 +1,36 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 const TextCounter = (
   props: React.HTMLProps<HTMLDivElement> & {
     count: number
   }
 ) => {
+  const divRef = useRef<HTMLDivElement>(null)
+  const [isInView, setIsInView] = React.useState(false)
   const [count, setCount] = React.useState(0)
+
+  useEffect(() => {
+    if (!divRef.current) return
+    const elem = divRef.current
+    const IntersectionObs = new IntersectionObserver((entries) => {
+      if (entries[0]?.intersectionRatio !== 0) {
+        IntersectionObs.unobserve(elem)
+        setIsInView(true)
+      }
+    })
+
+    IntersectionObs.observe(elem)
+    return () => {
+      IntersectionObs.unobserve(elem)
+      IntersectionObs.disconnect()
+    }
+  }, [])
+
   useEffect(() => {
     setCount(0)
     const maxTimer = props.count
-    if (!isFinite(maxTimer)) {
+    if (!isInView || !isFinite(maxTimer)) {
       return
     }
 
@@ -30,8 +50,13 @@ const TextCounter = (
     return () => {
       clearInterval(timer)
     }
-  }, [props.count])
-  return <div {...props}>{count}</div>
+  }, [props.count, isInView])
+
+  return (
+    <div ref={divRef} {...props}>
+      {count}
+    </div>
+  )
 }
 
 export default TextCounter

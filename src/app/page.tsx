@@ -157,7 +157,7 @@ export default function Home() {
                         />
                       </div>
                       <div className="font-bold absolute bottom-[20%] right-4 text-2xl">
-                        <Fade right>THE HOVER HOUSE</Fade>
+                        <Fade right>THE HOVER HOUSE-</Fade>
                       </div>
                     </div>
                   </div>
