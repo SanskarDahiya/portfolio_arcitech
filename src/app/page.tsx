@@ -8,7 +8,7 @@ import Fade from 'react-reveal/Fade'
 
 export default function Home() {
   return (
-    <div className="w-[calc(100% - 60px)] ml-[60px]">
+    <div className="w-full md:w-[calc(100% - 60px)] ml-0 md:ml-[60px]">
       <main
         className="min-h-screen w-full flex flex-col items-center justify-center"
         style={{

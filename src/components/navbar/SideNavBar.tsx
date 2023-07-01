@@ -18,7 +18,7 @@ const SideNavBar = () => {
   const [prefix, ActualPath] = currentPath.split('/')
 
   return (
-    <div className="fixed top-0 left-0 h-full w-[64px] pt-[70px] bg-black z-[1]">
+    <div className="hidden md:block fixed top-0 left-0 h-full w-[64px] pt-[70px] bg-black z-[1]">
       <div className="flex justify-between items-center flex-col gap-[80px] h-[95%]">
         <span className="h-0 w-[70%] bg-gray-400 border-gray-400 border-b" />
         <div className="white-text text-vertical flex-1 flex justify-center items-center text-xs">
